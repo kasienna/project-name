@@ -1,3 +1,15 @@
-<p>
-  preview works!
-</p>
+<div class="preview">
+	<div class="preview__field">
+		<span class="preview__label"> Imię:</span>
+		<span class="preview__value"> {{ user.first_name }} </span>
+	</div>
+	<div class="preview__field">
+		<span class="preview__label"> Nazwisko:</span>
+		<span class="preview__value"> {{ user.last_name }} </span>
+	</div>
+	<div class="preview__field">
+		<span class="preview__label"> Wiek:</span>
+		<span class="preview__value"> {{ user.age }} </span>
+	</div>
+	<button>Wróć</button>
+</div>
