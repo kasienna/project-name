@@ -1,2 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+	font-family: sans-serif, Helvetica, Arial;
+	margin: 0;
+}
+
+
+button {
+	text-transform: uppercase;
+	color: #ff7834;
+	border: 2px solid #ff7834;
+	background-color: transparent;
+	font-size: 14px;
+	min-width: 100px;
+	min-height: 35px;
+	margin: 5px;
+	margin-bottom: 2px;
+}
+
+button[disabled] {
+	color: #eed;
+	border: 2px solid #eed;
+}

@@ -1,0 +1,30 @@
+.preview {
+	width: 40%;
+	margin: 0 auto;
+	text-align: center;
+
+	&__nodata {
+		font-size: 18px;
+		color: #bba;
+		margin: 30px;
+	}
+
+	&__field {
+		max-width: 200px;
+		display: flex;
+		justify-content: space-between;
+		margin: 10px auto;
+		border-bottom: 1px solid #bba;
+	}
+
+	&__label {
+		color: #bba;
+	}
+
+	&__value {
+		color: #a09d66;
+		font-size: 20px;
+		height: 30px;
+
+	}
+}

@@ -1,16 +1,27 @@
 <div class="form__container">
 	<form [formGroup]="userForm">
-		<mat-form-field>
-			<input matInput placeholder="Imię" formControlName="first_name">
-		</mat-form-field>
-		<mat-form-field>
-			<input matInput placeholder="Nazwisko" formControlName="last_name">
-		</mat-form-field>
-		<mat-form-field>
-			<input matInput placeholder="Wiek" type="number" formControlName="age">
-		</mat-form-field>
-
-		<button mat-button class="form__button--submit" (click)="saveUser()">Wyślij</button><span *ngIf="userSaved">Zapisano!</span>
-		<button mat-button class="form__button--clear" (click)="reset()">Wyczyść</button>
+			<div>
+				<input placeholder="Imię" formControlName="first_name">
+			</div>
+			<div>
+				<input placeholder="Nazwisko" formControlName="last_name">
+			</div>
+			<div>
+				<input placeholder="Wiek" type="number" formControlName="age">
+			</div>
+		<div class="form__buttons">
+			<div class="form__button-wrapper">
+				<button class="form__button"
+						[disabled]="!userForm.valid" 
+						(click)="saveUser()"> Wyślij
+				</button>
+				<span *ngIf="userSaved">Zapisano!</span>
+			</div>
+			<div class="form__button-wrapper">
+				<button class="form__button" 
+						(click)="reset()">Wyczyść
+				</button>
+			</div>
+		</div>
 	</form>
 </div>

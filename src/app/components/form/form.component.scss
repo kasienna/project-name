@@ -1,0 +1,38 @@
+.form {
+	&__container {
+		width: 40%;
+		margin: 0 auto;
+		text-align: center;
+
+		input {
+			width: 100%;
+			background-color: #fefffe;
+			margin: 10px 0px;
+			border: 2px solid #f6f6e4;
+			padding: 5px;
+			font-size: 14px;
+
+			&.ng-invalid.ng-touched {
+				border-bottom: 2px solid #ff7834;
+			}
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: center;
+	}
+
+	&__button-wrapper {
+		display: flex;
+		flex-direction: column;
+
+		span {
+			color: #ff7834;
+			font-size: 12px;
+		}
+
+	}
+
+}
