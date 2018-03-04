@@ -18,4 +18,10 @@ export class PreviewComponent implements OnInit {
   	this.user = this.formService.getUser();
   }
 
+  userEmpty() {
+  	return this.user === null ||
+  		   this.user === undefined ||
+  		   this.user.first_name === null;
+  }
+
 }

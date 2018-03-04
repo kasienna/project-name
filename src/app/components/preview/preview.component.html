@@ -1,15 +1,22 @@
 <div class="preview">
-	<div class="preview__field">
-		<span class="preview__label"> Imię:</span>
-		<span class="preview__value"> {{ user.first_name }} </span>
+	<div class="preview__data"
+		 *ngIf="!userEmpty()">
+		<div class="preview__field">
+			<span class="preview__label"> Imię:</span>
+			<span class="preview__value"> {{ user.first_name }} </span>
+		</div>
+		<div class="preview__field">
+			<span class="preview__label"> Nazwisko:</span>
+			<span class="preview__value"> {{ user.last_name }} </span>
+		</div>
+		<div class="preview__field">
+			<span class="preview__label"> Wiek:</span>
+			<span class="preview__value"> {{ user.age }} </span>
+		</div>
 	</div>
-	<div class="preview__field">
-		<span class="preview__label"> Nazwisko:</span>
-		<span class="preview__value"> {{ user.last_name }} </span>
-	</div>
-	<div class="preview__field">
-		<span class="preview__label"> Wiek:</span>
-		<span class="preview__value"> {{ user.age }} </span>
+	<div class="preview__nodata"
+		 *ngIf="userEmpty()">
+		<span>Proszę wypełnić formularz</span>
 	</div>
 	<button>Wróć</button>
 </div>

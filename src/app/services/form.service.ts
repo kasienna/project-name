@@ -29,17 +29,21 @@ export class FormService {
   	if(this.user === undefined) {
   		this.user = localStorage.user !== undefined ? JSON.parse(localStorage.user) :
   					{
-  						first_name: '',
-  						last_name: '',
-  						age: ''
+  						first_name: null,
+  						last_name: null,
+  						age: null
   					};
   	}
   	return this.user;
   }
 
   clearUser(): void {
-  	this.user = undefined;
   	localStorage.removeItem('user');
+  	this.user = {
+					first_name: null,
+					last_name: null,
+					age: null
+				}
   }
 
 }

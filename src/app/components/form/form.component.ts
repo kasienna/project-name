@@ -21,14 +21,15 @@ export class FormComponent implements OnInit {
   	var user = this.formService.getUser();
   	this.userForm = this.fb.group({
   		'first_name': [user.first_name, Validators.required],
-  		'last_name': [user.last_name, Validators.required],
-  		'age': [user.age, Validators.required],
+  		'last_name': [user.last_name, Validators.compose([Validators.required, Validators.min(1), Validators.max(99)])],
+  		'age': [user.age, Validators.compose([Validators.required, Validators.min(1), Validators.max(99)])],
   		'validate': []
   	});
 
   }
 
   saveUser() {
+  	if(this.userForm.invalid) { return; }
   	console.log(this.userForm.value);
   	this.formService.saveUser(this.userForm.value);
   	this.userSaved = true;
