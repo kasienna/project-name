@@ -6,44 +6,42 @@ export interface User {
 	age: number
 }
 
-
 @Injectable()
 export class FormService {
 
-  public user: User;
+	public user: User;
 	
-  constructor() { }
+	constructor() { }
 
-  saveUser(user: User): void {
-  	this.user = {
-  		first_name: user.first_name,
-  		last_name: user.last_name,
-  		age: user.age
-  	}
+	saveUser(user: User): void {
+		this.user = {
+			first_name: user.first_name,
+			last_name: user.last_name,
+			age: user.age
+		}
 
-  	localStorage.user = JSON.stringify(this.user);
-  }
+		localStorage.user = JSON.stringify(this.user);
+	}
 
-  getUser(): User {
-  	console.log(this.user);
-  	if(this.user === undefined) {
-  		this.user = localStorage.user !== undefined ? JSON.parse(localStorage.user) :
-  					{
-  						first_name: null,
-  						last_name: null,
-  						age: null
-  					};
-  	}
-  	return this.user;
-  }
+	getUser(): User {
+		if(this.user === undefined) {
+			this.user = localStorage.user !== undefined ? JSON.parse(localStorage.user) :
+						{
+							first_name: null,
+							last_name: null,
+							age: null
+						};
+		}
+		return this.user;
+	}
 
-  clearUser(): void {
-  	localStorage.removeItem('user');
-  	this.user = {
+	clearUser(): void {
+		localStorage.removeItem('user');
+		this.user = {
 					first_name: null,
 					last_name: null,
 					age: null
 				}
-  }
+	}
 
 }

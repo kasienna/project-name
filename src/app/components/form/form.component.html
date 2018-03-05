@@ -1,25 +1,31 @@
 <div class="form__container">
 	<form [formGroup]="userForm">
 			<div>
-				<input placeholder="Imię" formControlName="first_name">
+				<input placeholder="Imię" 
+							 formControlName="first_name">
 			</div>
 			<div>
-				<input placeholder="Nazwisko" formControlName="last_name">
+				<input placeholder="Nazwisko" 
+							 formControlName="last_name">
 			</div>
 			<div>
-				<input placeholder="Wiek" type="number" formControlName="age">
+				<input placeholder="Wiek" 
+							 type="number" 
+							 formControlName="age">
 			</div>
 		<div class="form__buttons">
 			<div class="form__button-wrapper">
 				<button class="form__button"
-						[disabled]="!userForm.valid" 
-						(click)="saveUser()"> Wyślij
+								[disabled]="!userForm.valid" 
+								(click)="saveUser()"> 
+								Wyślij
 				</button>
 				<span *ngIf="userSaved">Zapisano!</span>
 			</div>
 			<div class="form__button-wrapper">
 				<button class="form__button" 
-						(click)="reset()">Wyczyść
+								(click)="reset()">
+								Wyczyść
 				</button>
 			</div>
 		</div>

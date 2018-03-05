@@ -19,7 +19,6 @@ import { FormService } from './services/form.service';
     BrowserModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [

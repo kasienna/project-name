@@ -29,8 +29,10 @@ export class FormComponent implements OnInit {
   }
 
   saveUser() {
-  	if(this.userForm.invalid) { return; }
-  	console.log(this.userForm.value);
+  	if(this.userForm.invalid) { 
+      return; 
+    }
+    
   	this.formService.saveUser(this.userForm.value);
   	this.userSaved = true;
   }
