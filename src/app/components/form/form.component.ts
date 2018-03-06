@@ -20,8 +20,8 @@ export class FormComponent implements OnInit {
   ngOnInit() {
     const user = this.formService.getUser();
     this.userForm = this.fb.group({
-      'first_name': [user.first_name, Validators.required],
-      'last_name': [user.last_name, Validators.compose([Validators.required, Validators.min(1), Validators.max(99)])],
+      'first_name': [user.first_name, Validators.compose([Validators.required, Validators.pattern('[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ ]*')])],
+      'last_name': [user.last_name, Validators.compose([Validators.required, Validators.pattern('[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ -]*')])],
       'age': [user.age, Validators.compose([Validators.required, Validators.min(1), Validators.max(99)])],
       'validate': []
     });
